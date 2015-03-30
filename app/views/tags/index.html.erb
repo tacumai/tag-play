@@ -1,33 +1,20 @@
-<p id="notice"><%= notice %></p>
+おにごっこ
 
-<h1>Listing Tags</h1>
+<input type="text" id="gauge" value="">
+<input type="text" id="latitude" value="0">
+<input type="text" id="longitude" value="0">
+<input type="submit">
 
-<table>
-  <thead>
-    <tr>
-      <th>Lat</th>
-      <th>Log</th>
-      <th>Oni</th>
-      <th>Gauge</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tags.each do |tag| %>
-      <tr>
-        <td><%= tag.lat %></td>
-        <td><%= tag.log %></td>
-        <td><%= tag.oni %></td>
-        <td><%= tag.gauge %></td>
-        <td><%= link_to 'Show', tag %></td>
-        <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
-        <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Tag', new_tag_path %>
+<script>
+  $(function(){
+    var time_count = <%= 0 %>;
+    setInterval(function(){
+      time_count += 5;
+      $('#gauge').val(time_count);
+      navigator.geolocation.watchPosition(function(position){
+        $('#latitude').val(position.coords.latitude);
+        $('#longitude').val(position.coords.longitude);
+      });
+    }, 1000);
+  });
+</script>
