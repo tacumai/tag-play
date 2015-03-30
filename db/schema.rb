@@ -14,12 +14,12 @@
 ActiveRecord::Schema.define(version: 20150330042828) do
 
   create_table "tags", force: :cascade do |t|
-    t.decimal  "lat"
-    t.decimal  "log"
+    t.decimal  "lat",        precision: 9, scale: 6
+    t.decimal  "log",        precision: 9, scale: 6
     t.boolean  "oni"
     t.integer  "gauge"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
 end
