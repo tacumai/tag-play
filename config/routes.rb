@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   resources :tags
+  namespace :api, { format: 'json' } do
+    resources :tags
+  end
+
+  root to: 'tags#index'
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
