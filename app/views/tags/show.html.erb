@@ -1,4 +1,24 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Lat:</strong>
+  <%= @tag.lat %>
+</p>
+
+<p>
+  <strong>Log:</strong>
+  <%= @tag.log %>
+</p>
+
+<p>
+  <strong>Oni:</strong>
+  <%= @tag.oni %>
+</p>
+
+<p>
+  <strong>Gauge:</strong>
+  <%= @tag.gauge %>
+</p>
+
 <%= link_to 'Edit', edit_tag_path(@tag) %> |
 <%= link_to 'Back', tags_path %>

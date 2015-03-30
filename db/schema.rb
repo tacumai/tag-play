@@ -11,9 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150330034043) do
+ActiveRecord::Schema.define(version: 20150330042828) do
 
   create_table "tags", force: :cascade do |t|
+    t.decimal  "lat"
+    t.decimal  "log"
+    t.boolean  "oni"
+    t.integer  "gauge"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
