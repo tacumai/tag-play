@@ -40,9 +40,10 @@ class TagsController < ApplicationController
     else
       @tag.oni = false
     end
-    if @tag.update
+    p @tag
+    if @tag.update(tag_params)
       # アップデート処理
-      render root_path
+      redirect_to tag_path(@tag)
     end
   end
 
@@ -68,7 +69,7 @@ class TagsController < ApplicationController
     end
 
     def same_position?(lat, log)
-      @oni = Tag.find(oni: true)
+      @oni = Tag.where(oni: true).first
       (@tag.lat == @oni.lat) && (@tag.log == @oni.log) 
     end
 end

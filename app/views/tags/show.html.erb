@@ -1,11 +1,11 @@
 おにごっこ
 
-<%= form_for(@tag) do |f| %>
+<%= form_for(@tag, url: {controller: :tags, action: :update}) do |f| %>
   <%= f.hidden_field :gauge, id: :gauge %>
   <%= f.hidden_field :lat, id: :latitude %>
   <%= f.hidden_field :log, id: :longitude %>
+  <%= f.submit %>
 <% end %>
-<input type="submit">
 
 <script>
   $(function(){
