@@ -1,8 +1,10 @@
 おにごっこ
 
-<input type="text" id="gauge" value="">
-<input type="text" id="latitude" value="0">
-<input type="text" id="longitude" value="0">
+<%= form_for(@tag) do |f| %>
+  <%= f.hidden_field :gauge, id: :gauge %>
+  <%= f.hidden_field :lat, id: :latitude %>
+  <%= f.hidden_field :log, id: :longitude %>
+<% end %>
 <input type="submit">
 
 <script>
